@@ -1,0 +1,93 @@
+"use client";
+
+import { useState } from "react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
+import LeadForm from "@/components/LeadForm";
+import { Menu, X } from "lucide-react";
+
+const Navbar = () => {
+  const [open, setOpen] = useState(false);
+  const [mobileMenu, setMobileMenu] = useState(false);
+
+  const links = [
+    { label: "How It Works", href: "#how-it-works" },
+    { label: "Examples", href: "#examples" },
+    { label: "Reviews", href: "#reviews" },
+  ];
+
+  return (
+    <>
+      <nav className="sticky top-0 z-40 border-b border-border/50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
+          <Link href="/" className="text-xl font-black tracking-tight text-foreground">
+            BuiltForFree
+          </Link>
+
+          {/* Desktop */}
+          <div className="hidden items-center gap-8 md:flex">
+            {links.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+              >
+                {l.label}
+              </a>
+            ))}
+            <Button
+              onClick={() => setOpen(true)}
+              className="bg-foreground text-background hover:bg-foreground/90"
+            >
+              Get Your Free Website
+            </Button>
+          </div>
+
+          {/* Mobile toggle */}
+          <button
+            className="md:hidden"
+            onClick={() => setMobileMenu(!mobileMenu)}
+            aria-label="Menu"
+          >
+            {mobileMenu ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
+
+        {/* Mobile menu */}
+        {mobileMenu && (
+          <div className="border-t border-border/50 px-4 pb-4 pt-2 md:hidden">
+            {links.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                className="block py-2 text-sm font-medium text-muted-foreground"
+                onClick={() => setMobileMenu(false)}
+              >
+                {l.label}
+              </a>
+            ))}
+            <Button
+              onClick={() => {
+                setOpen(true);
+                setMobileMenu(false);
+              }}
+              className="mt-2 w-full bg-foreground text-background hover:bg-foreground/90"
+            >
+              Get Your Free Website
+            </Button>
+          </div>
+        )}
+      </nav>
+
+      <Dialog open={open} onOpenChange={setOpen}>
+        <DialogContent className="sm:max-w-md">
+          <DialogTitle className="text-xl font-bold">Get Your Free Website</DialogTitle>
+          <LeadForm variant="modal" />
+        </DialogContent>
+      </Dialog>
+    </>
+  );
+};
+
+export default Navbar;
