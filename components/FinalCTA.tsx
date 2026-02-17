@@ -11,13 +11,13 @@ const FinalCTA = () => {
 
   return (
     <>
-      <section className="bg-foreground px-4 py-16 sm:px-6 md:py-24">
+      <section className="bg-muted/30 px-4 py-16 sm:px-6 md:py-24">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-3xl font-extrabold tracking-tight text-background sm:text-4xl md:text-5xl">
-            Ready To Turn Your Website Into A Lead Source?
+          <h2 className="text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl md:text-5xl">
+            Ready For A Website That Brings In Customers?
           </h2>
-          <p className="mt-4 text-lg text-background/75">
-            No card details. No upfront build fee. Just a professional website built for growth.
+          <p className="mt-4 text-lg text-muted-foreground">
+            No upfront build fee. No long-term contract. Just a professional website built for growth.
           </p>
           <Button
             onClick={() => {
@@ -25,11 +25,11 @@ const FinalCTA = () => {
               trackEvent("cta_click", { location: "final_cta", label: "claim_free_website" });
             }}
             size="lg"
-            className="mt-8 bg-background px-8 text-base text-foreground hover:bg-background/90"
+            className="mt-8 bg-primary px-8 text-base text-primary-foreground hover:bg-[#1A1A1A]"
           >
-            Claim My Free Website
+            Get My Free Website
           </Button>
-          <p className="mt-3 text-xs text-background/65">Average first response within one business day.</p>
+          <p className="mt-3 text-xs text-muted-foreground">Average first response within one business day.</p>
         </div>
       </section>
 

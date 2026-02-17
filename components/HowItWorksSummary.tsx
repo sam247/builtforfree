@@ -5,17 +5,17 @@ const steps = [
   {
     icon: ClipboardList,
     title: "Tell Us About Your Business",
-    description: "Submit the short brief with your services, target area, and desired outcomes.",
+    description: "Share your business details and what you want your website to do.",
   },
   {
     icon: Paintbrush,
-    title: "We Design and Build",
-    description: "We create your conversion-focused website, then share it for feedback and revisions.",
+    title: "We Build It",
+    description: "We design and build your website, then refine it with your feedback.",
   },
   {
     icon: Rocket,
-    title: "Launch and Grow",
-    description: "Go live in 5 to 7 business days with hosting from GBP 15.99/mo and your own domain.",
+    title: "You Host It",
+    description: "Go live in 5 to 7 business days. You only pay hosting from £15.99/month and your domain.",
   },
 ];
 
@@ -25,10 +25,10 @@ const HowItWorksSummary = () => {
       <div className="mx-auto max-w-6xl">
         <div className="mb-12 text-center">
           <h2 className="text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">
-            How We Take You Live Fast
+            A Simple, Honest Process
           </h2>
           <p className="mt-3 text-muted-foreground">
-            A straightforward process built for busy local business owners.
+            We build it. You host it. No upfront build fee.
           </p>
         </div>
 
@@ -46,7 +46,7 @@ const HowItWorksSummary = () => {
         </div>
 
         <div className="mt-12 text-center">
-          <Link href="/how-it-works" className="inline-flex items-center gap-2 font-medium text-primary transition-colors hover:text-primary/80">
+          <Link href="/how-it-works" className="inline-flex items-center gap-2 font-medium text-foreground transition-colors hover:text-secondary-foreground">
             See the full launch process
             <ArrowRight className="h-4 w-4" />
           </Link>

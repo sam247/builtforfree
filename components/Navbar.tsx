@@ -14,7 +14,6 @@ const links = [
   { label: "Examples", href: "#examples" },
   { label: "Reviews", href: "#reviews" },
   { label: "FAQ", href: "/faq" },
-  { label: "Blog", href: "/blog" },
 ];
 
 const Navbar = () => {
@@ -26,7 +25,7 @@ const Navbar = () => {
       <nav className="sticky top-0 z-40 border-b border-border/60 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/85">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
           <Link href="/" className="inline-flex items-center" aria-label="BuiltForFree home">
-            <Image src="/logo.svg" alt="BuiltForFree" width={170} height={36} priority className="h-9 w-auto" />
+            <Image src="/logo.svg" alt="BuiltForFree" width={119} height={25} priority className="h-[25px] w-auto" />
           </Link>
 
           <div className="hidden items-center gap-7 md:flex">
@@ -54,9 +53,9 @@ const Navbar = () => {
                 setOpen(true);
                 trackEvent("cta_click", { location: "navbar", label: "claim_free_website" });
               }}
-              className="bg-primary text-primary-foreground hover:bg-primary/90"
+              className="bg-primary text-primary-foreground hover:bg-[#1A1A1A]"
             >
-              Claim Free Website
+              Get My Free Website
             </Button>
           </div>
 
@@ -94,9 +93,9 @@ const Navbar = () => {
                 setMobileMenu(false);
                 trackEvent("cta_click", { location: "navbar_mobile", label: "claim_free_website" });
               }}
-              className="mt-2 w-full bg-primary text-primary-foreground hover:bg-primary/90"
+              className="mt-2 w-full bg-primary text-primary-foreground hover:bg-[#1A1A1A]"
             >
-              Claim Free Website
+              Get My Free Website
             </Button>
           </div>
         )}

@@ -205,11 +205,11 @@ const HeroForm = ({ variant = "inline" }: HeroFormProps) => {
 
       {errors.submit && <p className="text-sm text-destructive">{errors.submit}</p>}
 
-      <Button type="submit" className="w-full bg-primary text-primary-foreground hover:bg-primary/90" size="lg" disabled={isSubmitting}>
-        {isSubmitting ? "Submitting..." : "Claim My Free Website"}
+      <Button type="submit" className="w-full bg-primary text-primary-foreground hover:bg-[#1A1A1A]" size="lg" disabled={isSubmitting}>
+        {isSubmitting ? "Submitting..." : "Get My Free Website"}
       </Button>
       <p className="text-center text-xs text-muted-foreground">
-        No payment details required. Free build, fixed hosting from GBP 15.99/mo.
+        No payment details required. Free build, fixed hosting from £15.99/month.
       </p>
     </form>
   );

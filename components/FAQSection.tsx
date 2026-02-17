@@ -7,12 +7,12 @@ import {
 
 export const faqs = [
   {
-    q: "Is the website build really free?",
-    a: "Yes. We do not charge for design or development. You only pay for hosting from GBP 15.99/month and your domain name.",
+    q: "Is it really free?",
+    a: "Yes. We don't charge for the build. You simply cover hosting and your domain.",
   },
   {
     q: "What does the monthly cost cover?",
-    a: "Hosting keeps your website online, secure, and fast. Your domain cost is billed separately by your domain provider.",
+    a: "Hosting keeps your website online and maintained. Your domain is billed separately by your domain provider.",
   },
   {
     q: "How quickly can we launch?",

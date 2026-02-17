@@ -172,7 +172,7 @@ const LeadForm = ({ variant = "inline" }: LeadFormProps) => {
                 className="border-foreground/20 bg-background"
               />
             </div>
-            <Button onClick={next} disabled={!canStepOne} className="w-full bg-foreground text-background hover:bg-foreground/90" size="lg">
+            <Button onClick={next} disabled={!canStepOne} className="w-full bg-foreground text-background hover:bg-[#1A1A1A]" size="lg">
               Continue
             </Button>
           </motion.div>
@@ -216,7 +216,7 @@ const LeadForm = ({ variant = "inline" }: LeadFormProps) => {
               <Button onClick={back} variant="outline" className="flex-1 border-foreground/20" size="lg">
                 Back
               </Button>
-              <Button onClick={next} disabled={!canStepTwo} className="flex-1 bg-foreground text-background hover:bg-foreground/90" size="lg">
+              <Button onClick={next} disabled={!canStepTwo} className="flex-1 bg-foreground text-background hover:bg-[#1A1A1A]" size="lg">
                 Continue
               </Button>
             </div>
@@ -246,8 +246,8 @@ const LeadForm = ({ variant = "inline" }: LeadFormProps) => {
               <Button onClick={back} variant="outline" className="flex-1 border-foreground/20" size="lg">
                 Back
               </Button>
-              <Button onClick={submit} disabled={isSubmitting} className="flex-1 bg-foreground text-background hover:bg-foreground/90" size="lg">
-                {isSubmitting ? "Submitting..." : "Claim My Free Website"}
+              <Button onClick={submit} disabled={isSubmitting} className="flex-1 bg-foreground text-background hover:bg-[#1A1A1A]" size="lg">
+                {isSubmitting ? "Submitting..." : "Get My Free Website"}
               </Button>
             </div>
             <p className="text-center text-xs text-muted-foreground">

@@ -59,8 +59,8 @@ export default function RootLayout({
       <body className={`${manrope.variable} ${plusJakarta.variable}`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
+          defaultTheme="light"
+          enableSystem={false}
           disableTransitionOnChange
         >
           <TooltipProvider>
