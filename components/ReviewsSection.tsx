@@ -79,7 +79,7 @@ const ReviewsSection = () => {
                   />
                 ))}
               </div>
-              <p className="mb-4 text-sm text-foreground">"{review.quote}"</p>
+              <p className="mb-4 text-sm text-foreground">&quot;{review.quote}&quot;</p>
               <div>
                 <p className="text-sm font-bold text-foreground">
                   {review.name}

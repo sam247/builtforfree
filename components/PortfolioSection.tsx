@@ -57,7 +57,7 @@ const PortfolioSection = () => {
       <div className="mx-auto max-w-6xl">
         <div className="mb-12 text-center">
           <h2 className="text-3xl font-black tracking-tight text-foreground sm:text-4xl">
-            Websites We've Built
+            Websites We&apos;ve Built
           </h2>
           <p className="mt-3 text-muted-foreground">
             Real businesses. Real results. All built for free.
@@ -97,7 +97,7 @@ const PortfolioSection = () => {
                   ))}
                 </div>
                 <p className="text-sm italic text-muted-foreground">
-                  "{ex.review}"
+                  &quot;{ex.review}&quot;
                 </p>
                 <p className="mt-1 text-xs font-medium text-foreground/60">
                   — {ex.reviewer}

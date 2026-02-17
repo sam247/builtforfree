@@ -17,7 +17,7 @@ const HeroSection = () => {
             </h1>
             <p className="mt-6 max-w-lg text-lg text-muted-foreground">
               We design and build your website at zero cost. You only pay for
-              hosting (~£5/mo) and your domain name (~£10/yr). That's it.
+              hosting (~£5/mo) and your domain name (~£10/yr). That&apos;s it.
             </p>
             <div className="mt-6 flex items-center gap-1.5 text-sm text-muted-foreground">
               {[...Array(5)].map((_, i) => (
@@ -36,7 +36,7 @@ const HeroSection = () => {
               Claim Your Free Website
             </h2>
             <p className="mb-6 text-sm text-muted-foreground">
-              Fill in a few details and we'll get started.
+              Fill in a few details and we&apos;ll get started.
             </p>
             <LeadForm />
           </div>

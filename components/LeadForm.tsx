@@ -55,9 +55,9 @@ const LeadForm = ({ variant = "inline" }: LeadFormProps) => {
         className="flex flex-col items-center gap-4 py-8 text-center"
       >
         <CheckCircle className="h-12 w-12 text-[#00B67A]" />
-        <h3 className="text-xl font-bold text-foreground">You're In!</h3>
+        <h3 className="text-xl font-bold text-foreground">You&apos;re In!</h3>
         <p className="text-muted-foreground">
-          We'll be in touch within 24 hours to discuss your free website.
+          We&apos;ll be in touch within 24 hours to discuss your free website.
         </p>
       </motion.div>
     );
