@@ -16,9 +16,11 @@ const HeroSection = () => {
               Launch A Professional Website. Built For Free.
             </h1>
             <p className="mt-6 max-w-[34rem] text-lg leading-relaxed text-muted-foreground">
-              No upfront build fee. Just hosting from £15.99/month and your domain.
+              We build websites for free. Here&apos;s how it works: we design and build your site first. If you love it
+              (and most people do), you just cover the running costs. No setup fees. No contracts. No risk. Just a
+              great website, backed by real support and unbeatable value. We take the risk so you don&apos;t have to.
+              Simple as that.
             </p>
-            <p className="mt-3 text-sm text-muted-foreground">No trial period. Billing starts only when your site goes live.</p>
           </div>
 
           <div

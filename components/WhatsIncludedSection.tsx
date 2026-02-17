@@ -1,12 +1,30 @@
 import { CheckCircle2 } from "lucide-react";
 
 const items = [
-  "Professional website design tailored to your business",
-  "Complete build and launch setup",
-  "Hosting setup with SSL, security, and core maintenance",
-  "Mobile-first layout and local SEO foundations",
-  "Contact and enquiry form setup",
-  "Revision rounds before launch",
+  {
+    title: "Professional Design",
+    description: "A bespoke layout built around your business goals, services, and customers.",
+  },
+  {
+    title: "Full Build & Launch",
+    description: "We handle development and go-live setup so your site is ready without technical hassle.",
+  },
+  {
+    title: "Secure Hosting Setup",
+    description: "SSL, security basics, and dependable hosting configuration are included from day one.",
+  },
+  {
+    title: "Mobile & SEO Foundations",
+    description: "Your website is optimized for mobile users and structured for strong local visibility.",
+  },
+  {
+    title: "Enquiry Capture Setup",
+    description: "Contact and lead forms are configured to help turn traffic into real business enquiries.",
+  },
+  {
+    title: "Revisions Before Launch",
+    description: "You can request reasonable changes during build so the final site is right before go-live.",
+  },
 ];
 
 const WhatsIncludedSection = () => {
@@ -20,11 +38,12 @@ const WhatsIncludedSection = () => {
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((item) => (
-            <div key={item} className="rounded-2xl border border-border bg-card p-5">
-              <p className="inline-flex items-start gap-2 text-sm text-secondary-foreground">
+            <div key={item.title} className="rounded-2xl border border-border bg-card p-5">
+              <div className="inline-flex items-start gap-2">
                 <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-foreground" />
-                <span>{item}</span>
-              </p>
+                <h3 className="text-base font-semibold text-foreground">{item.title}</h3>
+              </div>
+              <p className="mt-2 text-sm text-secondary-foreground">{item.description}</p>
             </div>
           ))}
         </div>

@@ -11,20 +11,19 @@ import { faqs } from "@/components/FAQSection";
 import WhatsIncludedSection from "@/components/WhatsIncludedSection";
 import WhyThisWorksSection from "@/components/WhyThisWorksSection";
 import WhoItsForSection from "@/components/WhoItsForSection";
-import TransparentPricingSection from "@/components/TransparentPricingSection";
 import WhatHappensNextSection from "@/components/WhatHappensNextSection";
 
 export const metadata: Metadata = {
   title: "Free Website Build for UK Small Businesses",
   description:
-    "Get a professional business website built for free. Hosting starts on launch from £15.99/month inc VAT, plus your domain.",
+    "BuiltForFree designs and builds professional websites for UK small businesses at no upfront build fee, with real support and a simple launch process.",
   alternates: {
     canonical: "https://builtforfree.co.uk",
   },
   openGraph: {
     title: "Free Website Build for UK Small Businesses | BuiltForFree",
     description:
-      "No upfront build fee. BuiltForFree designs and builds your website, with hosting from £15.99/month inc VAT on launch.",
+      "We design and build your website first at no upfront build fee, with clear support and a simple launch process for UK small businesses.",
     type: "website",
     url: "https://builtforfree.co.uk",
     siteName: "BuiltForFree",
@@ -33,7 +32,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Free Website Build for UK Small Businesses | BuiltForFree",
     description:
-      "Professional websites built for free for UK businesses. Hosting starts on launch from £15.99/month inc VAT.",
+      "BuiltForFree creates professional websites for UK small businesses with no upfront build fee and practical support from brief to launch.",
   },
 };
 
@@ -97,7 +96,6 @@ export default function Home() {
           <WhatsIncludedSection />
           <WhyThisWorksSection />
           <WhoItsForSection />
-          <TransparentPricingSection />
           <WhatHappensNextSection />
           <ExampleSites />
           <HowItWorksSummary />
