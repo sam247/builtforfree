@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import HowItWorksSummary from "@/components/HowItWorksSummary";
 import PortfolioSection from "@/components/PortfolioSection";
+import ExampleSites from "@/components/ExampleSites";
 import ReviewsSection from "@/components/ReviewsSection";
 import FAQSummary from "@/components/FAQSummary";
 import FinalCTA from "@/components/FinalCTA";
@@ -52,6 +53,7 @@ export default function Home() {
           <HeroSection />
           <HowItWorksSummary />
           <PortfolioSection />
+          <ExampleSites />
           <ReviewsSection />
           <FAQSummary />
           <FinalCTA />
