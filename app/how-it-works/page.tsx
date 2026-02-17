@@ -35,7 +35,7 @@ const steps = [
     icon: Rocket,
     title: "Go Live",
     description:
-      "Your site goes live. You only cover hosting (~£5/mo) and domain (~£10/yr).",
+      "Your site goes live. You only cover hosting (£15.99/mo) and domain (~£10/yr).",
   },
 ];
 

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     default: "BuiltForFree | A Professional Website Built For You. Completely Free.",
     template: "%s | BuiltForFree",
   },
-  description: "We design and build your website at zero cost. You only pay for hosting (~£5/mo) and your domain name (~£10/yr).",
+  description: "We design and build your website at zero cost. You only pay for hosting (£15.99/mo) and your domain name (~£10/yr).",
   openGraph: {
     type: "website",
     locale: "en_GB",

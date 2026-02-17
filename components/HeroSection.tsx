@@ -17,13 +17,13 @@ const HeroSection = () => {
             </h1>
             <p className="mt-6 max-w-lg text-lg text-muted-foreground">
               We design and build your website at zero cost. You only pay for
-              hosting (~£5/mo) and your domain name (~£10/yr). That&apos;s it.
+              hosting (£15.99/mo) and your domain name (~£10/yr). That&apos;s it.
             </p>
             <div className="mt-6 flex items-center gap-1.5 text-sm text-muted-foreground">
               {[...Array(5)].map((_, i) => (
                 <Star
                   key={i}
-                  className="h-4 w-4 fill-primary text-primary"
+                  className="h-4 w-4 fill-[#00B67A] text-[#00B67A]"
                 />
               ))}
               <span className="ml-1 font-medium">Rated 4.9/5 from 200+ reviews</span>

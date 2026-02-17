@@ -8,11 +8,11 @@ import {
 export const faqs = [
   {
     q: "Is it really free?",
-    a: "Yes — we design and build your website completely free of charge. You only pay for hosting (around £5/month) and your domain name (around £10/year).",
+    a: "Yes — we design and build your website completely free of charge. You only pay for hosting (£15.99/month) and your domain name (around £10/year).",
   },
   {
     q: "What do I pay for?",
-    a: "You cover the hosting fee (~£5/month) to keep your site live, and your domain name (~£10/year) so people can find you online. That's it.",
+    a: "You cover the hosting fee (£15.99/month) to keep your site live, and your domain name (around £10/year) so people can find you online. That's it.",
   },
   {
     q: "How long does it take?",

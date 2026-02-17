@@ -11,10 +11,10 @@ import { faqs } from "@/components/FAQSection";
 
 export const metadata: Metadata = {
   title: "BuiltForFree | A Professional Website Built For You. Completely Free.",
-  description: "We design and build your website at zero cost. You only pay for hosting (~£5/mo) and your domain name (~£10/yr). Get started today.",
+  description: "We design and build your website at zero cost. You only pay for hosting (£15.99/mo) and your domain name (~£10/yr). Get started today.",
   openGraph: {
     title: "BuiltForFree | A Professional Website Built For You. Completely Free.",
-    description: "We design and build your website at zero cost. You only pay for hosting (~£5/mo) and your domain name (~£10/yr).",
+    description: "We design and build your website at zero cost. You only pay for hosting (£15.99/mo) and your domain name (~£10/yr).",
     type: "website",
     url: "https://builtforfree.co.uk",
     siteName: "BuiltForFree",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "BuiltForFree | A Professional Website Built For You. Completely Free.",
-    description: "We design and build your website at zero cost. You only pay for hosting (~£5/mo) and your domain name (~£10/yr).",
+    description: "We design and build your website at zero cost. You only pay for hosting (£15.99/mo) and your domain name (~£10/yr).",
   },
 };
 

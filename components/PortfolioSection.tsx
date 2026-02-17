@@ -92,7 +92,7 @@ const PortfolioSection = () => {
                   {[...Array(ex.rating)].map((_, j) => (
                     <Star
                       key={j}
-                      className="h-3.5 w-3.5 fill-primary text-primary"
+                      className="h-3.5 w-3.5 fill-[#00B67A] text-[#00B67A]"
                     />
                   ))}
                 </div>
