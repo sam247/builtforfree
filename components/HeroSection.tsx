@@ -31,7 +31,7 @@ const HeroSection = () => {
           </div>
 
           {/* Form */}
-          <div className="rounded-2xl border border-border bg-card p-6 shadow-lg sm:p-8">
+          <div id="form" className="rounded-2xl border border-border bg-card p-6 shadow-lg sm:p-8">
             <h2 className="mb-1 text-lg font-bold text-foreground">
               Claim Your Free Website
             </h2>

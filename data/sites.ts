@@ -3,8 +3,12 @@ export interface Site {
   url: string;
   industry: string;
   builtInDays: number;
-  description: string;
+  shortDescription: string;
   slug: string;
+  goal?: string;
+  deliverables?: string[];
+  outcome?: string;
+  type?: string;
   seoUpgradeAvailable?: boolean;
 }
 
@@ -14,7 +18,7 @@ export const sites: Site[] = [
     url: "https://peonyandmagnolia.com",
     industry: "Florist",
     builtInDays: 5,
-    description: "Beautiful floral design website showcasing arrangements and services.",
+    shortDescription: "Beautiful floral design website showcasing arrangements and services.",
     slug: "peony-and-magnolia",
   },
   {
@@ -22,7 +26,7 @@ export const sites: Site[] = [
     url: "https://nitnot.com",
     industry: "Technology",
     builtInDays: 7,
-    description: "Modern technology company website with clean design and clear messaging.",
+    shortDescription: "Modern technology company website with clean design and clear messaging.",
     slug: "nitnot",
   },
   {
@@ -30,7 +34,7 @@ export const sites: Site[] = [
     url: "https://seohertfordshire.com",
     industry: "SEO Services",
     builtInDays: 6,
-    description: "Professional SEO services website focused on local business growth.",
+    shortDescription: "Professional SEO services website focused on local business growth.",
     slug: "seo-hertfordshire",
   },
   {
@@ -38,7 +42,7 @@ export const sites: Site[] = [
     url: "https://farehamkitchens.co.uk",
     industry: "Kitchen Design",
     builtInDays: 5,
-    description: "Kitchen design and installation showcase website for local customers.",
+    shortDescription: "Kitchen design and installation showcase website for local customers.",
     slug: "fareham-kitchens",
   },
   {
@@ -46,7 +50,7 @@ export const sites: Site[] = [
     url: "https://thegrapesboxmoor.com",
     industry: "Restaurant",
     builtInDays: 6,
-    description: "Restaurant website featuring menu, bookings, and venue information.",
+    shortDescription: "Restaurant website featuring menu, bookings, and venue information.",
     slug: "the-grapes-boxmoor",
   },
   {
@@ -54,7 +58,7 @@ export const sites: Site[] = [
     url: "https://nitnotclinic.com",
     industry: "Healthcare",
     builtInDays: 7,
-    description: "Healthcare clinic website with appointment booking and service information.",
+    shortDescription: "Healthcare clinic website with appointment booking and service information.",
     slug: "nitnot-clinic",
   },
 ];
