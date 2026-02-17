@@ -1,34 +1,39 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import HowItWorksSummary from "@/components/HowItWorksSummary";
 import ExampleSites from "@/components/ExampleSites";
+import HowItWorksSummary from "@/components/HowItWorksSummary";
 import ReviewsSection from "@/components/ReviewsSection";
 import FAQSummary from "@/components/FAQSummary";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
 import { faqs } from "@/components/FAQSection";
+import WhatsIncludedSection from "@/components/WhatsIncludedSection";
+import WhyThisWorksSection from "@/components/WhyThisWorksSection";
+import WhoItsForSection from "@/components/WhoItsForSection";
+import TransparentPricingSection from "@/components/TransparentPricingSection";
+import WhatHappensNextSection from "@/components/WhatHappensNextSection";
 
 export const metadata: Metadata = {
-  title: "Free Website Design for UK Small Businesses",
+  title: "Free Website Build for UK Small Businesses",
   description:
-    "Need a new business website? BuiltForFree creates professional websites for UK small businesses at no upfront build cost.",
+    "Get a professional business website built for free. Hosting starts on launch from £15.99/month inc VAT, plus your domain.",
   alternates: {
     canonical: "https://builtforfree.co.uk",
   },
   openGraph: {
-    title: "Free Website Design for UK Small Businesses | BuiltForFree",
+    title: "Free Website Build for UK Small Businesses | BuiltForFree",
     description:
-      "We design and build your website for free. Launch in 5 to 7 business days and start generating enquiries.",
+      "No upfront build fee. BuiltForFree designs and builds your website, with hosting from £15.99/month inc VAT on launch.",
     type: "website",
     url: "https://builtforfree.co.uk",
     siteName: "BuiltForFree",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Website Design for UK Small Businesses | BuiltForFree",
+    title: "Free Website Build for UK Small Businesses | BuiltForFree",
     description:
-      "Professional websites built for free for UK businesses. Launch quickly and convert more enquiries.",
+      "Professional websites built for free for UK businesses. Hosting starts on launch from £15.99/month inc VAT.",
   },
 };
 
@@ -89,6 +94,11 @@ export default function Home() {
         <Navbar />
         <main>
           <HeroSection />
+          <WhatsIncludedSection />
+          <WhyThisWorksSection />
+          <WhoItsForSection />
+          <TransparentPricingSection />
+          <WhatHappensNextSection />
           <ExampleSites />
           <HowItWorksSummary />
           <ReviewsSection />

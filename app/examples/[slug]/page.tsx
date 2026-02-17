@@ -160,7 +160,7 @@ export default function ExamplePage({ params }: { params: { slug: string } }) {
                 <p className="mb-6 text-muted-foreground">Get your own professional website built for free.</p>
                 <Link href="/#form">
                   <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
-                    Claim My Free Website
+                    Get My Free Website
                   </Button>
                 </Link>
               </div>

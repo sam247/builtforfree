@@ -49,6 +49,7 @@ const ReviewsSection = () => {
             <span className="text-sm font-bold text-foreground">4.9 out of 5</span>
             <span className="text-sm text-muted-foreground">from 200+ reviews</span>
           </div>
+          <p className="mt-3 text-sm text-muted-foreground">No upfront build fee. Hosting billing begins on launch.</p>
         </div>
 
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

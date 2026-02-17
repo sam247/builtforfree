@@ -15,7 +15,7 @@ const steps = [
   {
     icon: Rocket,
     title: "You Host It",
-    description: "Go live in 5 to 7 business days. You only pay hosting from £15.99/month and your domain.",
+    description: "Go live in 5 to 7 business days. Hosting starts on launch from £15.99/month inc VAT, plus your domain.",
   },
 ];
 

@@ -98,10 +98,10 @@ const ExampleSites = () => {
                     </div>
 
                     <div className="mb-3 flex flex-wrap items-center gap-2">
-                      <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
+                      <span className="rounded-full bg-foreground px-2.5 py-0.5 text-xs font-medium text-background">
                         {site.industry}
                       </span>
-                      <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-secondary-foreground">
+                      <span className="rounded-full bg-foreground px-2.5 py-0.5 text-xs font-medium text-background">
                         Built in {site.builtInDays} {site.builtInDays === 1 ? "day" : "days"}
                       </span>
                     </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -37,6 +37,14 @@ const HeroForm = ({ variant = "inline" }: HeroFormProps) => {
   });
 
   const source = useMemo(() => `hero-${variant}`, [variant]);
+
+  useEffect(() => {
+    return () => {
+      if (started && !submitted) {
+        trackEvent("lead_form_abandon", { source, step });
+      }
+    };
+  }, [source, started, step, submitted]);
 
   const update = (field: string, value: string) => {
     if (!started) {
@@ -161,7 +169,16 @@ const HeroForm = ({ variant = "inline" }: HeroFormProps) => {
         />
       </div>
 
-      <p className="text-xs font-medium text-muted-foreground">Step {step} of 2</p>
+      <div>
+        <div className="mb-1 flex items-center justify-between text-xs font-medium text-muted-foreground">
+          <span>Step {step} of 2</span>
+          <span>{step === 1 ? "Contact details" : "Project details"}</span>
+        </div>
+        <div className="grid grid-cols-2 gap-2">
+          <div className={`h-1.5 rounded-full ${step >= 1 ? "bg-foreground" : "bg-muted"}`} />
+          <div className={`h-1.5 rounded-full ${step >= 2 ? "bg-foreground" : "bg-muted"}`} />
+        </div>
+      </div>
 
       {step === 1 && (
         <>
@@ -223,6 +240,9 @@ const HeroForm = ({ variant = "inline" }: HeroFormProps) => {
           >
             Continue
           </Button>
+          <p className="text-center text-xs text-muted-foreground">
+            Next: tell us what you need your website to do.
+          </p>
         </>
       )}
 
@@ -250,7 +270,10 @@ const HeroForm = ({ variant = "inline" }: HeroFormProps) => {
               type="button"
               variant="outline"
               className="flex-1"
-              onClick={() => setStep(1)}
+              onClick={() => {
+                setStep(1);
+                trackEvent("lead_form_step_back", { source, step: 2 });
+              }}
             >
               Back
             </Button>

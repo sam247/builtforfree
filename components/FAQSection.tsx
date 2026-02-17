@@ -11,8 +11,20 @@ export const faqs = [
     a: "Yes. We don't charge for the build. You simply cover hosting and your domain.",
   },
   {
+    q: "Is there a free trial?",
+    a: "No. Hosting starts when your website launches.",
+  },
+  {
+    q: "When does monthly billing start?",
+    a: "Billing starts on launch at £15.99/month inc VAT.",
+  },
+  {
     q: "What does the monthly cost cover?",
-    a: "Hosting keeps your website online and maintained. Your domain is billed separately by your domain provider.",
+    a: "Hosting includes SSL, security, maintenance support, and keeping your site live. Your domain is separate.",
+  },
+  {
+    q: "Do you offer refunds after billing?",
+    a: "No. Payments taken after billing are non-refundable.",
   },
   {
     q: "How quickly can we launch?",
@@ -28,7 +40,7 @@ export const faqs = [
   },
   {
     q: "Is there a long contract?",
-    a: "No long design contract for the build. We keep the process simple so you can decide if the service is right for your business.",
+    a: "No long-term contract for the build. You can cancel hosting later if needed.",
   },
 ];
 
