@@ -47,16 +47,16 @@ const ExampleSites = () => {
   }
 
   return (
-    <section id="examples" className="bg-background px-4 py-16 sm:px-6 md:py-24">
+    <section id="examples" className="section-shell bg-background">
       <div className="mx-auto max-w-6xl">
-        <div className="mb-12 text-center">
-          <h2 className="text-3xl font-black tracking-tight text-foreground sm:text-4xl">
+        <div className="mb-10 text-center">
+          <h2 className="text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">
             Example Websites We&apos;ve Built
           </h2>
           <p className="mt-3 text-muted-foreground">Real websites. Real businesses. All built for free.</p>
         </div>
 
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {sites.map((site, index) => {
             const imagePath = `/sites/${site.slug}.webp`;
             const isVisible = visibleItems.has(index);
@@ -70,7 +70,7 @@ const ExampleSites = () => {
                 className={`
                   group flex flex-col overflow-hidden rounded-2xl border border-border bg-card
                   transition-all duration-200 ease-out
-                  hover:-translate-y-0.5 hover:shadow-md
+                  hover:-translate-y-0.5 hover:shadow-sm
                   ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}
                 `}
                 style={{

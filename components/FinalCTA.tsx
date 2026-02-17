@@ -11,7 +11,7 @@ const FinalCTA = () => {
 
   return (
     <>
-      <section className="bg-muted/30 px-4 py-16 sm:px-6 md:py-24">
+      <section className="section-shell bg-muted/20">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl md:text-5xl">
             Ready For A Website That Brings In Customers?

@@ -21,9 +21,9 @@ const steps = [
 
 const HowItWorksSummary = () => {
   return (
-    <section className="bg-muted/40 px-4 py-16 sm:px-6 md:py-24">
+    <section className="section-shell bg-muted/30">
       <div className="mx-auto max-w-6xl">
-        <div className="mb-12 text-center">
+        <div className="mb-10 text-center">
           <h2 className="text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">
             A Simple, Honest Process
           </h2>
@@ -32,10 +32,10 @@ const HowItWorksSummary = () => {
           </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-3">
           {steps.map((step, i) => (
-            <div key={i} className="flex flex-col items-center rounded-2xl border border-border bg-background p-8 text-center shadow-sm">
-              <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary text-primary-foreground">
+            <div key={i} className="flex flex-col items-center rounded-2xl border border-border bg-background p-7 text-center shadow-sm">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full border border-border bg-background text-foreground">
                 <step.icon className="h-6 w-6" />
               </div>
               <span className="mb-2 text-xs font-bold uppercase tracking-widest text-muted-foreground">Step {i + 1}</span>

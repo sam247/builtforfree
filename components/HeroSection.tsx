@@ -8,41 +8,43 @@ const StarIcon = () => (
 
 const HeroSection = () => {
   return (
-    <section className="bg-background px-4 pb-14 pt-14 sm:px-6 md:pb-16 md:pt-20">
+    <section className="bg-background px-4 pb-12 pt-14 sm:px-6 md:pb-16 md:pt-20">
       <div className="mx-auto max-w-6xl">
-        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
-          <div>
-            <h1 className="text-4xl font-extrabold leading-[1.05] tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+        <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-12">
+          <div className="max-w-[38rem]">
+            <h1 className="text-4xl font-extrabold leading-[1.04] tracking-tight text-foreground sm:text-5xl lg:text-6xl">
               Stop Losing Customers To An Outdated Website.
             </h1>
-            <p className="mt-6 max-w-xl text-lg text-muted-foreground">
+            <p className="mt-6 max-w-[34rem] text-lg leading-relaxed text-muted-foreground">
               We build you a professional website for free.
               <br />
               You only cover hosting (from £15.99/month) and your domain.
             </p>
           </div>
 
-          <div id="form" className="rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-8">
-            <h2 className="mb-1 text-xl font-bold text-foreground">Get My Free Website</h2>
-            <p className="mb-6 text-sm text-muted-foreground">
-              Takes under 2 minutes. We reply within one business day.
-            </p>
+          <div
+            id="form"
+            className="w-full rounded-2xl border border-border bg-card p-5 shadow-sm sm:p-6 lg:ml-auto lg:max-w-[520px]"
+          >
+            <h2 className="mb-1 text-lg font-bold text-foreground">Get My Free Website</h2>
+            <p className="mb-4 text-sm text-muted-foreground">Takes under 2 minutes. We reply within one business day.</p>
             <HeroForm />
-            <p className="mt-4 text-center text-xs text-muted-foreground">
-              No upfront fee. No long contract. Just a professional build.
-            </p>
           </div>
         </div>
+      </div>
 
-        <div className="mt-10 rounded-2xl border border-border bg-muted/30 p-5">
-          <div className="flex flex-wrap items-center justify-center gap-1.5 text-sm text-secondary-foreground">
-            {[...Array(5)].map((_, i) => (
-              <StarIcon key={i} />
-            ))}
-            <span className="ml-1 font-semibold text-foreground">4.9 out of 5 from 200+ UK business owners</span>
+      <div className="mt-10 border-y border-border bg-muted/20 px-4 py-5 sm:px-6">
+        <div className="mx-auto max-w-5xl">
+          <div className="flex flex-col items-center gap-3 text-center sm:flex-row sm:justify-center sm:gap-4">
+            <div className="flex items-center gap-1">
+              {[...Array(5)].map((_, i) => (
+                <StarIcon key={i} />
+              ))}
+            </div>
+            <p className="text-sm font-medium text-foreground">4.9 out of 5 from 200+ UK business owners</p>
           </div>
 
-          <div className="mt-4 grid gap-3 text-center sm:grid-cols-3 sm:text-left">
+          <div className="mt-4 grid gap-2 text-center sm:grid-cols-3 sm:gap-4">
             <p className="text-sm text-secondary-foreground">
               <span className="font-semibold text-foreground">24h</span> - Average first response
             </p>

@@ -22,13 +22,13 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="sticky top-0 z-40 border-b border-border/60 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/85">
+      <nav className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/95">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
           <Link href="/" className="inline-flex items-center" aria-label="BuiltForFree home">
             <Image src="/logo.svg" alt="BuiltForFree" width={119} height={25} priority className="h-[25px] w-auto" />
           </Link>
 
-          <div className="hidden items-center gap-7 md:flex">
+          <div className="hidden items-center gap-6 md:flex">
             {links.map((l) =>
               l.href.startsWith("#") ? (
                 <a

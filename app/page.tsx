@@ -89,8 +89,8 @@ export default function Home() {
         <Navbar />
         <main>
           <HeroSection />
-          <HowItWorksSummary />
           <ExampleSites />
+          <HowItWorksSummary />
           <ReviewsSection />
           <FAQSummary />
           <FinalCTA />

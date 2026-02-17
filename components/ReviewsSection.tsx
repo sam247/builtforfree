@@ -35,15 +35,15 @@ const reviews = [
 
 const ReviewsSection = () => {
   return (
-    <section id="reviews" className="bg-muted/40 px-4 py-16 sm:px-6 md:py-24">
+    <section id="reviews" className="section-shell bg-muted/30">
       <div className="mx-auto max-w-6xl">
-        <div className="mb-12 text-center">
+        <div className="mb-10 text-center">
           <h2 className="text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">Trusted by UK Small Businesses</h2>
 
           <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-border bg-background px-5 py-2 shadow-sm">
             <div className="flex gap-0.5">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="h-4 w-4 fill-[#00B67A] text-[#00B67A]" />
+                <Star key={i} className="h-4 w-4 fill-[#22C55E] text-[#22C55E]" />
               ))}
             </div>
             <span className="text-sm font-bold text-foreground">4.9 out of 5</span>
@@ -51,12 +51,12 @@ const ReviewsSection = () => {
           </div>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {reviews.map((review, i) => (
             <div key={i} className="rounded-2xl border border-border bg-background p-6">
               <div className="mb-3 flex gap-0.5">
                 {[...Array(5)].map((_, j) => (
-                  <Star key={j} className="h-4 w-4 fill-[#00B67A] text-[#00B67A]" />
+                  <Star key={j} className="h-4 w-4 fill-[#22C55E] text-[#22C55E]" />
                 ))}
               </div>
               <p className="mb-4 text-sm text-foreground">&quot;{review.quote}&quot;</p>

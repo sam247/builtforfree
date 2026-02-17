@@ -94,4 +94,8 @@
   .prose-bff a {
     @apply font-medium text-primary underline-offset-4 hover:underline;
   }
+
+  .section-shell {
+    @apply px-4 py-16 sm:px-6 md:py-20;
+  }
 }
