@@ -2,33 +2,35 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import LeadForm from "@/components/LeadForm";
 import { Menu, X } from "lucide-react";
+import { trackEvent } from "@/lib/analytics";
+
+const links = [
+  { label: "How It Works", href: "/how-it-works" },
+  { label: "Examples", href: "#examples" },
+  { label: "Reviews", href: "#reviews" },
+  { label: "FAQ", href: "/faq" },
+  { label: "Blog", href: "/blog" },
+];
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [mobileMenu, setMobileMenu] = useState(false);
 
-  const links = [
-    { label: "How It Works", href: "/how-it-works" },
-    { label: "Examples", href: "#examples" },
-    { label: "Reviews", href: "#reviews" },
-    { label: "FAQ", href: "/faq" },
-  ];
-
   return (
     <>
-      <nav className="sticky top-0 z-40 border-b border-border/50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <nav className="sticky top-0 z-40 border-b border-border/60 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/85">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
-          <Link href="/" className="text-xl font-black tracking-tight text-foreground">
-            BuiltForFree
+          <Link href="/" className="inline-flex items-center" aria-label="BuiltForFree home">
+            <Image src="/logo.svg" alt="BuiltForFree" width={170} height={36} priority className="h-9 w-auto" />
           </Link>
 
-          {/* Desktop */}
-          <div className="hidden items-center gap-8 md:flex">
-            {links.map((l) => (
+          <div className="hidden items-center gap-7 md:flex">
+            {links.map((l) =>
               l.href.startsWith("#") ? (
                 <a
                   key={l.href}
@@ -46,29 +48,26 @@ const Navbar = () => {
                   {l.label}
                 </Link>
               )
-            ))}
+            )}
             <Button
-              onClick={() => setOpen(true)}
-              className="bg-foreground text-background hover:bg-foreground/90"
+              onClick={() => {
+                setOpen(true);
+                trackEvent("cta_click", { location: "navbar", label: "claim_free_website" });
+              }}
+              className="bg-primary text-primary-foreground hover:bg-primary/90"
             >
-              Get Your Free Website
+              Claim Free Website
             </Button>
           </div>
 
-          {/* Mobile toggle */}
-          <button
-            className="md:hidden"
-            onClick={() => setMobileMenu(!mobileMenu)}
-            aria-label="Menu"
-          >
+          <button className="md:hidden" onClick={() => setMobileMenu(!mobileMenu)} aria-label="Menu">
             {mobileMenu ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
 
-        {/* Mobile menu */}
         {mobileMenu && (
-          <div className="border-t border-border/50 px-4 pb-4 pt-2 md:hidden">
-            {links.map((l) => (
+          <div className="border-t border-border/60 px-4 pb-4 pt-2 md:hidden">
+            {links.map((l) =>
               l.href.startsWith("#") ? (
                 <a
                   key={l.href}
@@ -88,15 +87,16 @@ const Navbar = () => {
                   {l.label}
                 </Link>
               )
-            ))}
+            )}
             <Button
               onClick={() => {
                 setOpen(true);
                 setMobileMenu(false);
+                trackEvent("cta_click", { location: "navbar_mobile", label: "claim_free_website" });
               }}
-              className="mt-2 w-full bg-foreground text-background hover:bg-foreground/90"
+              className="mt-2 w-full bg-primary text-primary-foreground hover:bg-primary/90"
             >
-              Get Your Free Website
+              Claim Free Website
             </Button>
           </div>
         )}
@@ -104,7 +104,7 @@ const Navbar = () => {
 
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="sm:max-w-md">
-          <DialogTitle className="text-xl font-bold">Get Your Free Website</DialogTitle>
+          <DialogTitle className="text-xl font-bold">Claim Your Free Website</DialogTitle>
           <LeadForm variant="modal" />
         </DialogContent>
       </Dialog>

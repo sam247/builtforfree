@@ -7,24 +7,28 @@ import {
 
 export const faqs = [
   {
-    q: "Is it really free?",
-    a: "Yes — we design and build your website completely free of charge. You only pay for hosting (£15.99/month) and your domain name (around £10/year).",
+    q: "Is the website build really free?",
+    a: "Yes. We do not charge for design or development. You only pay for hosting from GBP 15.99/month and your domain name.",
   },
   {
-    q: "What do I pay for?",
-    a: "You cover the hosting fee (£15.99/month) to keep your site live, and your domain name (around £10/year) so people can find you online. That's it.",
+    q: "What does the monthly cost cover?",
+    a: "Hosting keeps your website online, secure, and fast. Your domain cost is billed separately by your domain provider.",
   },
   {
-    q: "How long does it take?",
-    a: "Most websites are designed, built, and ready to go live within 5–7 business days from the moment we have your details.",
+    q: "How quickly can we launch?",
+    a: "Most projects launch in 5 to 7 business days once we have your brief and required business details.",
   },
   {
-    q: "Can I make changes later?",
-    a: "Absolutely. We offer a certain number of revisions during the build. After launch, you can request changes or we can hand over access for you to update it yourself.",
+    q: "Will the site be optimized for mobile and SEO?",
+    a: "Yes. Every site is mobile-first and includes local SEO essentials like clear structure, metadata, and conversion-focused page content.",
   },
   {
-    q: "What's included?",
-    a: "A fully responsive, professionally designed website tailored to your business — including mobile optimisation, contact forms, SEO basics, and fast hosting.",
+    q: "Can I request edits before launch?",
+    a: "Absolutely. We include revision rounds so the site reflects your brand and goals before it goes live.",
+  },
+  {
+    q: "Is there a long contract?",
+    a: "No long design contract for the build. We keep the process simple so you can decide if the service is right for your business.",
   },
 ];
 
@@ -34,10 +38,10 @@ interface FAQSectionProps {
 
 const FAQSection = ({ showTitle = true }: FAQSectionProps) => {
   return (
-    <section className="bg-background px-4 py-16 sm:px-6 md:py-24">
+    <section className="bg-background px-4 py-16 sm:px-6 md:py-20">
       <div className="mx-auto max-w-3xl">
         {showTitle && (
-          <h2 className="mb-8 text-center text-3xl font-black tracking-tight text-foreground sm:text-4xl">
+          <h2 className="mb-8 text-center text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">
             Frequently Asked Questions
           </h2>
         )}
@@ -47,9 +51,7 @@ const FAQSection = ({ showTitle = true }: FAQSectionProps) => {
               <AccordionTrigger className="text-left text-base font-semibold text-foreground hover:no-underline">
                 {faq.q}
               </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
-                {faq.a}
-              </AccordionContent>
+              <AccordionContent className="text-muted-foreground">{faq.a}</AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>

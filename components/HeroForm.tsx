@@ -1,18 +1,20 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { CheckCircle } from "lucide-react";
+import { submitLead } from "@/lib/lead-client";
+import { trackEvent } from "@/lib/analytics";
 
 interface HeroFormProps {
   variant?: "inline" | "modal";
 }
 
 const businessTypes = [
-  "Restaurant / Café",
+  "Restaurant / Cafe",
   "Salon / Barbershop",
   "Tradesperson",
   "Portfolio / Creative",
@@ -22,72 +24,92 @@ const businessTypes = [
 
 const HeroForm = ({ variant = "inline" }: HeroFormProps) => {
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [started, setStarted] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [form, setForm] = useState({
     name: "",
     email: "",
     businessType: "",
     websiteNeeded: "",
+    honeypot: "",
   });
 
+  const source = useMemo(() => `hero-${variant}`, [variant]);
+
   const update = (field: string, value: string) => {
+    if (!started) {
+      setStarted(true);
+      trackEvent("lead_form_started", { source });
+    }
+
     setForm((prev) => ({ ...prev, [field]: value }));
-    // Clear error when user starts typing
     if (errors[field]) {
       setErrors((prev) => {
-        const newErrors = { ...prev };
-        delete newErrors[field];
-        return newErrors;
+        const copy = { ...prev };
+        delete copy[field];
+        return copy;
       });
     }
   };
 
   const validate = () => {
-    const newErrors: Record<string, string> = {};
+    const nextErrors: Record<string, string> = {};
 
     if (!form.name.trim() || form.name.trim().length < 2) {
-      newErrors.name = "Name must be at least 2 characters";
+      nextErrors.name = "Name must be at least 2 characters.";
     }
 
     if (!form.email.trim()) {
-      newErrors.email = "Email is required";
+      nextErrors.email = "Email is required.";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
-      newErrors.email = "Please enter a valid email address";
+      nextErrors.email = "Please enter a valid email address.";
     }
 
     if (!form.businessType) {
-      newErrors.businessType = "Please select a business type";
+      nextErrors.businessType = "Please select your business type.";
     }
 
     if (!form.websiteNeeded.trim() || form.websiteNeeded.trim().length < 10) {
-      newErrors.websiteNeeded = "Please describe what you need (at least 10 characters)";
+      nextErrors.websiteNeeded = "Please share a little more detail (10+ characters).";
     }
 
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
+    setErrors(nextErrors);
+    return Object.keys(nextErrors).length === 0;
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
+
     if (!validate()) {
+      trackEvent("lead_submit_failed", { source, reason: "validation" });
       return;
     }
 
-    // TODO: Replace with Resend webhook integration
-    console.log("Form submitted:", form);
-    
-    // Simulate API call
+    setIsSubmitting(true);
+    setErrors({});
+
     try {
-      // await fetch("[Your webhook endpoint]", {
-      //   method: "POST",
-      //   headers: { "Content-Type": "application/json" },
-      //   body: JSON.stringify(form),
-      // });
+      const page = typeof window !== "undefined" ? window.location.pathname : "/";
+
+      await submitLead({
+        name: form.name.trim(),
+        email: form.email.trim(),
+        businessType: form.businessType,
+        websiteNeeded: form.websiteNeeded.trim(),
+        source,
+        page,
+        honeypot: form.honeypot,
+      });
+
       setSubmitted(true);
+      trackEvent("lead_submit_success", { source, page });
     } catch (error) {
-      console.error("Form submission error:", error);
-      setErrors({ submit: "Something went wrong. Please try again." });
+      const message = error instanceof Error ? error.message : "Unable to submit. Please try again.";
+      setErrors({ submit: message });
+      trackEvent("lead_submit_failed", { source, reason: "api" });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -95,9 +117,9 @@ const HeroForm = ({ variant = "inline" }: HeroFormProps) => {
     return (
       <div className="flex flex-col items-center gap-4 py-8 text-center">
         <CheckCircle className="h-12 w-12 text-primary" />
-        <h3 className="text-xl font-bold text-foreground">Thank You!</h3>
+        <h3 className="text-xl font-bold text-foreground">Application Received</h3>
         <p className="text-muted-foreground">
-          We&apos;ll be in touch within 24 hours to discuss your free website.
+          Thanks. We will contact you within one business day.
         </p>
       </div>
     );
@@ -105,6 +127,17 @@ const HeroForm = ({ variant = "inline" }: HeroFormProps) => {
 
   return (
     <form onSubmit={handleSubmit} className="w-full space-y-4">
+      <div className="hidden" aria-hidden>
+        <label htmlFor="website">Website</label>
+        <Input
+          id="website"
+          tabIndex={-1}
+          autoComplete="off"
+          value={form.honeypot}
+          onChange={(e) => update("honeypot", e.target.value)}
+        />
+      </div>
+
       <div>
         <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-foreground">
           Name
@@ -116,18 +149,13 @@ const HeroForm = ({ variant = "inline" }: HeroFormProps) => {
           onChange={(e) => update("name", e.target.value)}
           className={errors.name ? "border-destructive" : ""}
           aria-invalid={!!errors.name}
-          aria-describedby={errors.name ? "name-error" : undefined}
         />
-        {errors.name && (
-          <p id="name-error" className="mt-1 text-xs text-destructive">
-            {errors.name}
-          </p>
-        )}
+        {errors.name && <p className="mt-1 text-xs text-destructive">{errors.name}</p>}
       </div>
 
       <div>
         <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-foreground">
-          Email
+          Work Email
         </label>
         <Input
           id="email"
@@ -137,29 +165,16 @@ const HeroForm = ({ variant = "inline" }: HeroFormProps) => {
           onChange={(e) => update("email", e.target.value)}
           className={errors.email ? "border-destructive" : ""}
           aria-invalid={!!errors.email}
-          aria-describedby={errors.email ? "email-error" : undefined}
         />
-        {errors.email && (
-          <p id="email-error" className="mt-1 text-xs text-destructive">
-            {errors.email}
-          </p>
-        )}
+        {errors.email && <p className="mt-1 text-xs text-destructive">{errors.email}</p>}
       </div>
 
       <div>
         <label htmlFor="businessType" className="mb-1.5 block text-sm font-medium text-foreground">
           Business Type
         </label>
-        <Select
-          value={form.businessType}
-          onValueChange={(v) => update("businessType", v)}
-        >
-          <SelectTrigger
-            id="businessType"
-            className={errors.businessType ? "border-destructive" : ""}
-            aria-invalid={!!errors.businessType}
-            aria-describedby={errors.businessType ? "businessType-error" : undefined}
-          >
+        <Select value={form.businessType} onValueChange={(v) => update("businessType", v)}>
+          <SelectTrigger id="businessType" className={errors.businessType ? "border-destructive" : ""}>
             <SelectValue placeholder="Select your business type" />
           </SelectTrigger>
           <SelectContent>
@@ -170,44 +185,32 @@ const HeroForm = ({ variant = "inline" }: HeroFormProps) => {
             ))}
           </SelectContent>
         </Select>
-        {errors.businessType && (
-          <p id="businessType-error" className="mt-1 text-xs text-destructive">
-            {errors.businessType}
-          </p>
-        )}
+        {errors.businessType && <p className="mt-1 text-xs text-destructive">{errors.businessType}</p>}
       </div>
 
       <div>
         <label htmlFor="websiteNeeded" className="mb-1.5 block text-sm font-medium text-foreground">
-          Website Needed
+          What do you need your website to do?
         </label>
         <Textarea
           id="websiteNeeded"
-          placeholder="Briefly describe what you need..."
+          placeholder="Tell us your services, target area, and what enquiries you want to receive."
           value={form.websiteNeeded}
           onChange={(e) => update("websiteNeeded", e.target.value)}
           className={`min-h-[100px] ${errors.websiteNeeded ? "border-destructive" : ""}`}
           aria-invalid={!!errors.websiteNeeded}
-          aria-describedby={errors.websiteNeeded ? "websiteNeeded-error" : undefined}
         />
-        {errors.websiteNeeded && (
-          <p id="websiteNeeded-error" className="mt-1 text-xs text-destructive">
-            {errors.websiteNeeded}
-          </p>
-        )}
+        {errors.websiteNeeded && <p className="mt-1 text-xs text-destructive">{errors.websiteNeeded}</p>}
       </div>
 
-      {errors.submit && (
-        <p className="text-sm text-destructive">{errors.submit}</p>
-      )}
+      {errors.submit && <p className="text-sm text-destructive">{errors.submit}</p>}
 
-      <Button
-        type="submit"
-        className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
-        size="lg"
-      >
-        Get My Free Website
+      <Button type="submit" className="w-full bg-primary text-primary-foreground hover:bg-primary/90" size="lg" disabled={isSubmitting}>
+        {isSubmitting ? "Submitting..." : "Claim My Free Website"}
       </Button>
+      <p className="text-center text-xs text-muted-foreground">
+        No payment details required. Free build, fixed hosting from GBP 15.99/mo.
+      </p>
     </form>
   );
 };

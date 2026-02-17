@@ -1,28 +1,51 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Manrope, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemeProvider } from "@/components/theme-provider";
 
-const inter = Inter({ subsets: ["latin"] });
+const manrope = Manrope({
+  subsets: ["latin"],
+  variable: "--font-body",
+});
+
+const plusJakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-display",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://builtforfree.co.uk"),
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
   title: {
-    default: "BuiltForFree | A Professional Website Built For You. Completely Free.",
+    default: "Free Website Design for UK Small Businesses | BuiltForFree",
     template: "%s | BuiltForFree",
   },
-  description: "We design and build your website at zero cost. You only pay for hosting (£15.99/mo) and your domain name (~£10/yr).",
+  description:
+    "Get a professional small business website built for free. BuiltForFree helps UK businesses launch in days and generate more enquiries.",
+  alternates: {
+    canonical: "https://builtforfree.co.uk",
+  },
   openGraph: {
     type: "website",
     locale: "en_GB",
     url: "https://builtforfree.co.uk",
     siteName: "BuiltForFree",
+    title: "Free Website Design for UK Small Businesses | BuiltForFree",
+    description:
+      "Professional websites built for free for UK businesses. You only pay for hosting and domain.",
   },
   twitter: {
     card: "summary_large_image",
+    title: "Free Website Design for UK Small Businesses | BuiltForFree",
+    description:
+      "Professional websites built for free for UK businesses. You only pay for hosting and domain.",
   },
 };
 
@@ -33,7 +56,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={`${manrope.variable} ${plusJakarta.variable}`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

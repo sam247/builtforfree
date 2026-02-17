@@ -6,6 +6,7 @@ import { ExternalLink } from "lucide-react";
 import DeviceFrame from "@/components/DeviceFrame";
 import SiteScreenshot from "@/components/SiteScreenshot";
 import { sites } from "@/data/sites";
+import { trackEvent } from "@/lib/analytics";
 
 const ExampleSites = () => {
   const [visibleItems, setVisibleItems] = useState<Set<number>>(new Set());
@@ -118,6 +119,12 @@ const ExampleSites = () => {
                     href={site.url}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() =>
+                      trackEvent("outbound_click", {
+                        location: "examples_grid",
+                        destination: site.url,
+                      })
+                    }
                     className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors"
                     aria-label={`Visit ${site.name} (opens in new tab)`}
                   >
