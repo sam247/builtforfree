@@ -1,4 +1,4 @@
-import LeadForm from "@/components/LeadForm";
+import HeroForm from "@/components/HeroForm";
 import { Star } from "lucide-react";
 
 const HeroSection = () => {
@@ -23,7 +23,7 @@ const HeroSection = () => {
               {[...Array(5)].map((_, i) => (
                 <Star
                   key={i}
-                  className="h-4 w-4 fill-[#00B67A] text-[#00B67A]"
+                  className="h-4 w-4 fill-primary text-primary"
                 />
               ))}
               <span className="ml-1 font-medium">Rated 4.9/5 from 200+ reviews</span>
@@ -38,7 +38,7 @@ const HeroSection = () => {
             <p className="mb-6 text-sm text-muted-foreground">
               Fill in a few details and we&apos;ll get started.
             </p>
-            <LeadForm />
+            <HeroForm />
           </div>
         </div>
       </div>

@@ -12,9 +12,10 @@ const Navbar = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
 
   const links = [
-    { label: "How It Works", href: "#how-it-works" },
+    { label: "How It Works", href: "/how-it-works" },
     { label: "Examples", href: "#examples" },
     { label: "Reviews", href: "#reviews" },
+    { label: "FAQ", href: "/faq" },
   ];
 
   return (
@@ -28,13 +29,23 @@ const Navbar = () => {
           {/* Desktop */}
           <div className="hidden items-center gap-8 md:flex">
             {links.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
-                className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-              >
-                {l.label}
-              </a>
+              l.href.startsWith("#") ? (
+                <a
+                  key={l.href}
+                  href={l.href}
+                  className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  {l.label}
+                </a>
+              ) : (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  {l.label}
+                </Link>
+              )
             ))}
             <Button
               onClick={() => setOpen(true)}
@@ -58,14 +69,25 @@ const Navbar = () => {
         {mobileMenu && (
           <div className="border-t border-border/50 px-4 pb-4 pt-2 md:hidden">
             {links.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
-                className="block py-2 text-sm font-medium text-muted-foreground"
-                onClick={() => setMobileMenu(false)}
-              >
-                {l.label}
-              </a>
+              l.href.startsWith("#") ? (
+                <a
+                  key={l.href}
+                  href={l.href}
+                  className="block py-2 text-sm font-medium text-muted-foreground"
+                  onClick={() => setMobileMenu(false)}
+                >
+                  {l.label}
+                </a>
+              ) : (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  className="block py-2 text-sm font-medium text-muted-foreground"
+                  onClick={() => setMobileMenu(false)}
+                >
+                  {l.label}
+                </Link>
+              )
             ))}
             <Button
               onClick={() => {

@@ -1,13 +1,15 @@
+import Link from "next/link";
+
 const Footer = () => {
   return (
     <footer className="border-t border-border bg-background px-4 py-8 sm:px-6">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 sm:flex-row">
-        <span className="text-sm font-black tracking-tight text-foreground">
+        <Link href="/" className="text-sm font-black tracking-tight text-foreground hover:text-primary transition-colors">
           BuiltForFree
-        </span>
+        </Link>
         <div className="flex gap-6 text-sm text-muted-foreground">
-          <a href="#" className="hover:text-foreground transition-colors">Privacy</a>
-          <a href="#" className="hover:text-foreground transition-colors">Terms</a>
+          <Link href="/privacy" className="hover:text-foreground transition-colors">Privacy</Link>
+          <Link href="/terms" className="hover:text-foreground transition-colors">Terms</Link>
           <a href="mailto:hello@builtforfree.co.uk" className="hover:text-foreground transition-colors">
             Contact
           </a>

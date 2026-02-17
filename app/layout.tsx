@@ -9,8 +9,21 @@ import { ThemeProvider } from "@/components/theme-provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "BuiltForFree | A Professional Website Built For You. Completely Free.",
+  metadataBase: new URL("https://builtforfree.co.uk"),
+  title: {
+    default: "BuiltForFree | A Professional Website Built For You. Completely Free.",
+    template: "%s | BuiltForFree",
+  },
   description: "We design and build your website at zero cost. You only pay for hosting (~£5/mo) and your domain name (~£10/yr).",
+  openGraph: {
+    type: "website",
+    locale: "en_GB",
+    url: "https://builtforfree.co.uk",
+    siteName: "BuiltForFree",
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
 export default function RootLayout({

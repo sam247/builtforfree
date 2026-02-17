@@ -54,7 +54,7 @@ const ReviewsSection = () => {
               {[...Array(5)].map((_, i) => (
                 <Star
                   key={i}
-                  className="h-4 w-4 fill-[#00B67A] text-[#00B67A]"
+                  className="h-4 w-4 fill-primary text-primary"
                 />
               ))}
             </div>
@@ -75,7 +75,7 @@ const ReviewsSection = () => {
                 {[...Array(5)].map((_, j) => (
                   <Star
                     key={j}
-                    className="h-4 w-4 fill-[#00B67A] text-[#00B67A]"
+                    className="h-4 w-4 fill-primary text-primary"
                   />
                 ))}
               </div>

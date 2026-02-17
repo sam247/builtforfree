@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
-import LeadForm from "@/components/LeadForm";
+import HeroForm from "@/components/HeroForm";
 
 const FinalCTA = () => {
   const [open, setOpen] = useState(false);
@@ -31,7 +31,7 @@ const FinalCTA = () => {
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="sm:max-w-md">
           <DialogTitle className="text-xl font-bold">Get Your Free Website</DialogTitle>
-          <LeadForm variant="modal" />
+          <HeroForm variant="modal" />
         </DialogContent>
       </Dialog>
     </>

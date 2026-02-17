@@ -5,7 +5,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-const faqs = [
+export const faqs = [
   {
     q: "Is it really free?",
     a: "Yes — we design and build your website completely free of charge. You only pay for hosting (around £5/month) and your domain name (around £10/year).",
@@ -28,13 +28,19 @@ const faqs = [
   },
 ];
 
-const FAQSection = () => {
+interface FAQSectionProps {
+  showTitle?: boolean;
+}
+
+const FAQSection = ({ showTitle = true }: FAQSectionProps) => {
   return (
     <section className="bg-background px-4 py-16 sm:px-6 md:py-24">
       <div className="mx-auto max-w-3xl">
-        <h2 className="mb-8 text-center text-3xl font-black tracking-tight text-foreground sm:text-4xl">
-          Frequently Asked Questions
-        </h2>
+        {showTitle && (
+          <h2 className="mb-8 text-center text-3xl font-black tracking-tight text-foreground sm:text-4xl">
+            Frequently Asked Questions
+          </h2>
+        )}
         <Accordion type="single" collapsible className="w-full">
           {faqs.map((faq, i) => (
             <AccordionItem key={i} value={`faq-${i}`}>
