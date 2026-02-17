@@ -30,12 +30,12 @@ export const sites: Site[] = [
     slug: "nitnot",
   },
   {
-    name: "SEO Hertfordshire",
-    url: "https://seohertfordshire.com",
-    industry: "SEO Services",
+    name: "Mind Power",
+    url: "http://mind-power.co.uk",
+    industry: "Therapy",
     builtInDays: 6,
-    shortDescription: "Professional SEO services website focused on local business growth.",
-    slug: "seo-hertfordshire",
+    shortDescription: "Clean therapy website focused on credibility, clarity, and lead enquiries.",
+    slug: "mind-power",
   },
   {
     name: "Fareham Kitchens",

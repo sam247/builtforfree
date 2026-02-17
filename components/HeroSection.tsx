@@ -42,7 +42,7 @@ const HeroSection = () => {
                 <StarIcon key={i} />
               ))}
             </div>
-            <p className="text-sm font-medium text-foreground">4.9 out of 5 from 200+ UK business owners</p>
+            <p className="text-sm font-medium text-foreground">4.9 out of 5 from UK business owners</p>
           </div>
 
           <div className="mx-auto mt-4 grid max-w-3xl gap-2 text-center sm:grid-cols-3 sm:gap-6">
