@@ -103,10 +103,10 @@ export async function POST(req: NextRequest) {
     }
 
     const resendApiKey = process.env.RESEND_API_KEY;
-    const toEmail = process.env.LEADS_TO_EMAIL;
+    const toEmail = process.env.LEADS_TO_EMAIL || "sampettiford@googlemail.com";
     const fromEmail = process.env.LEADS_FROM_EMAIL || "BuiltForFree Leads <onboarding@resend.dev>";
 
-    if (!resendApiKey || !toEmail) {
+    if (!resendApiKey) {
       return NextResponse.json(
         {
           ok: false,

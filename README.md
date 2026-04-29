@@ -22,7 +22,7 @@ npm install
 
 ```bash
 RESEND_API_KEY=your_resend_api_key
-LEADS_TO_EMAIL=you@example.com
+LEADS_TO_EMAIL=sampettiford@googlemail.com # optional; defaults to this
 LEADS_FROM_EMAIL="BuiltForFree Leads <onboarding@resend.dev>"
 ```
 
