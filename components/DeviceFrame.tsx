@@ -15,9 +15,6 @@ const DeviceFrame = ({ variant, url, children, className }: DeviceFrameProps) =>
         <div className="relative rounded-t-[18px] bg-[#1d1d1f] p-2 shadow-2xl">
           {/* Screen bezel */}
           <div className="relative overflow-hidden rounded-t-[12px] bg-[#000] border border-[#1d1d1f]/50">
-            {/* Camera notch */}
-            <div className="absolute left-1/2 top-0 z-10 h-4 w-32 -translate-x-1/2 rounded-b-full bg-[#1d1d1f] pointer-events-none" />
-            
             {/* Screen content - fixed 16:10 aspect ratio */}
             <div className="relative aspect-[16/10] overflow-hidden bg-[#000]">
               <div className="absolute inset-0">
