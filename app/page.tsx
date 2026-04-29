@@ -7,6 +7,7 @@ import ReviewsSection from "@/components/ReviewsSection";
 import FAQSummary from "@/components/FAQSummary";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
+import Link from "next/link";
 import { faqs } from "@/components/FAQSection";
 import WhatsIncludedSection from "@/components/WhatsIncludedSection";
 import WhyThisWorksSection from "@/components/WhyThisWorksSection";
@@ -100,6 +101,25 @@ export default function Home() {
           <ExampleSites />
           <HowItWorksSummary />
           <ReviewsSection />
+          <section className="section-shell bg-muted/30">
+            <div className="mx-auto max-w-6xl rounded-2xl border border-border bg-card p-6">
+              <h2 className="text-2xl font-bold text-foreground">Explore free website guides</h2>
+              <p className="mt-2 text-sm text-muted-foreground">
+                Compare options, see UK-focused pages, and find the best starting point for your business.
+              </p>
+              <div className="mt-4 flex flex-wrap gap-4 text-sm">
+                <Link href="/free-website-uk" className="font-medium text-primary hover:text-primary/80">
+                  Free Website UK
+                </Link>
+                <Link href="/free-website-for-small-business-uk" className="font-medium text-primary hover:text-primary/80">
+                  Small Business UK Offer
+                </Link>
+                <Link href="/free-website-vs-diy-uk" className="font-medium text-primary hover:text-primary/80">
+                  Free Website vs DIY UK
+                </Link>
+              </div>
+            </div>
+          </section>
           <FAQSummary />
           <FinalCTA />
         </main>

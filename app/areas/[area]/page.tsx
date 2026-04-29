@@ -78,6 +78,13 @@ export default async function AreaPage({ params }: { params: { area: string } })
               <Link href="/#form" className="mt-4 inline-block font-medium text-primary hover:text-primary/80">
                 Claim my free website
               </Link>
+              <p className="mt-3 text-sm text-muted-foreground">
+                Prefer to see the full UK offer first?{" "}
+                <Link href="/free-website-uk" className="font-medium text-primary hover:text-primary/80">
+                  Explore our free website UK page
+                </Link>
+                .
+              </p>
             </section>
 
             <section className="mt-10">

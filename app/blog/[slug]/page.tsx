@@ -99,6 +99,15 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
               <Link href="/#form" className="mt-4 inline-block font-medium text-primary hover:text-primary/80">
                 Claim my free website
               </Link>
+              <div className="mt-3 text-sm text-muted-foreground">
+                <Link href="/free-website-uk" className="font-medium text-primary hover:text-primary/80">
+                  Free website UK
+                </Link>{" "}
+                ·{" "}
+                <Link href="/free-website-vs-diy-uk" className="font-medium text-primary hover:text-primary/80">
+                  Free website vs DIY
+                </Link>
+              </div>
             </section>
 
             {related.length > 0 && (

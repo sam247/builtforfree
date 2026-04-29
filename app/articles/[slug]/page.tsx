@@ -42,7 +42,7 @@ export default async function ArticlePage({ params }: { params: { slug: string }
             <ol className="flex items-center gap-2">
               <li><Link href="/" className="hover:text-foreground">Home</Link></li>
               <li>/</li>
-              <li><Link href="/blog" className="hover:text-foreground">Blog</Link></li>
+              <li><Link href="/articles" className="hover:text-foreground">Articles</Link></li>
               <li>/</li>
               <li className="text-foreground">Article</li>
             </ol>
@@ -59,6 +59,13 @@ export default async function ArticlePage({ params }: { params: { slug: string }
             <Link href="/#form" className="mt-4 inline-block font-medium text-primary hover:text-primary/80">
               Claim my free website
             </Link>
+            <div className="mt-3 text-sm text-muted-foreground">
+              Start here:{" "}
+              <Link href="/free-website-for-small-business-uk" className="font-medium text-primary hover:text-primary/80">
+                free website for small business UK
+              </Link>
+              .
+            </div>
           </section>
         </article>
       </main>

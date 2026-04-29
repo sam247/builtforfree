@@ -245,6 +245,15 @@ export default function HowItWorksPage() {
                 >
                   Get My Free Website
                 </Link>
+                <div className="mt-3 text-sm text-muted-foreground">
+                  <Link href="/free-website-uk" className="font-medium text-primary hover:text-primary/80">
+                    Free website UK
+                  </Link>{" "}
+                  ·{" "}
+                  <Link href="/free-website-for-small-business-uk" className="font-medium text-primary hover:text-primary/80">
+                    Small business offer
+                  </Link>
+                </div>
               </div>
             </div>
           </section>

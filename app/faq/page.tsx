@@ -65,6 +65,13 @@ export default function FAQPage() {
               Frequently Asked Questions
             </h1>
             <FAQSection showTitle={false} />
+            <div className="mt-8 text-center text-sm text-muted-foreground">
+              Compare options:{" "}
+              <Link href="/free-website-vs-diy-uk" className="font-medium text-primary hover:text-primary/80">
+                free website vs DIY in the UK
+              </Link>
+              .
+            </div>
           </div>
         </main>
         <Footer />

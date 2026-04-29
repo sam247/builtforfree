@@ -67,6 +67,17 @@ export default async function BlogIndexPage() {
                   </li>
                 ))}
               </ul>
+              <div className="mt-4 flex flex-wrap gap-4 text-sm">
+                <Link href="/areas" className="font-medium text-primary hover:text-primary/80">
+                  View all area pages
+                </Link>
+                <Link href="/articles" className="font-medium text-primary hover:text-primary/80">
+                  Browse all articles
+                </Link>
+                <Link href="/free-website-vs-diy-uk" className="font-medium text-primary hover:text-primary/80">
+                  Free website vs DIY UK
+                </Link>
+              </div>
             </section>
           </div>
         </main>
