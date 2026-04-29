@@ -46,12 +46,22 @@ export const sites: Site[] = [
     slug: "fareham-kitchens",
   },
   {
-    name: "The Grapes Boxmoor",
-    url: "https://thegrapesboxmoor.com",
-    industry: "Restaurant",
+    name: "OpenRedaction",
+    url: "https://openredaction.com/",
+    industry: "SaaS",
     builtInDays: 6,
-    shortDescription: "Restaurant website featuring menu, bookings, and venue information.",
-    slug: "the-grapes-boxmoor",
+    shortDescription:
+      "Privacy-focused SaaS website designed to communicate product value quickly, improve trust with security-first messaging, and convert visitors through clearer use-case flows, stronger copy hierarchy, and action-led calls to install and explore documentation.",
+    slug: "openredaction",
+    goal: "Create a high-clarity SaaS marketing website that explains PII redaction benefits in plain language, supports product discovery across technical and buyer audiences, and increases conversion into documentation views, trials, and integration adoption.",
+    deliverables: [
+      "Message architecture for problem, solution, and proof sections",
+      "Use-case blocks targeting AI prompt safety, logging, and webhook workflows",
+      "Conversion-focused CTA structure for install and product exploration",
+      "SEO-aligned content hierarchy for privacy and redaction intent terms",
+    ],
+    outcome:
+      "The updated site presents a clearer value proposition, improves credibility around privacy and compliance concerns, and creates smoother pathways from first visit to action, supporting higher-quality traffic engagement and stronger product-intent conversions.",
   },
   {
     name: "NitNot Clinic",
